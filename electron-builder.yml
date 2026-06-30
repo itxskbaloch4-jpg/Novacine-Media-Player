@@ -1,0 +1,27 @@
+appId: com.novacine.player
+productName: Novacine
+directories:
+  buildResources: resources
+  output: release
+files:
+  - dist/**/*
+  - resources/**/*
+  - node_modules/**/*
+  - package.json
+extraResources:
+  - from: resources/ffmpeg
+    to: ffmpeg
+    filter:
+      - "**/*"
+win:
+  target:
+    - nsis
+  icon: resources/icon.ico
+mac:
+  target:
+    - dmg
+  icon: resources/icon.icns
+linux:
+  target:
+    - AppImage
+  icon: resources/icon.png
